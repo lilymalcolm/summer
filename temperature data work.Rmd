@@ -1,0 +1,67 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(insol)
+library(maptools)
+library(maps)
+library(raster)
+library(colorRamps)
+library(rgdal)
+library(sp)
+```
+
+
+```{r}
+temperaturedata <- read.csv("tempdata.csv", as.is = TRUE)
+```
+
+```{r}
+degreedays <- (temperaturedata[,9] - 18.333)
+degreedays[which(degreedays < 0)] = NA
+temp_and_dd <- cbind(temperaturedata,degreedays)
+```
+
+
+```{r}
+origins <- readShapePoly('TM_WORLD_BORDERS_SIMPL-0/TM_WORLD_BORDERS_SIMPL-0.3.shp')
+str(origins)
+origins@data
+proj4string(origins) <- CRS("+proj=longlat +datum=WGS84")
+```
+
+```{r}
+plot(origins)
+```
+
+
+```{r}
+
+temp_and_dd <- data.frame(temp_and_dd)
+class(temp_and_dd[,4]) <- "numeric"
+class(temp_and_dd[,5]) <- "numeric"
+nonas <- temp_and_dd[which(is.na(temp_and_dd[,4])==FALSE | is.na(temp_and_dd[,5])==FALSE),]
+nonas <- nonas[which(is.na(nonas[,4])==FALSE & is.na(nonas[,5])==FALSE),]
+
+coord <- coordinates((nonas[,5:4]))
+pts <- SpatialPointsDataFrame(data =nonas, coords = coord, proj4string = CRS("+proj=longlat +datum=WGS84"))
+
+```
+
+
+```{r}
+
+plot(origins)
+plot(pts[1,], add = T, pch = 16, col = Color)
+plot(origins)
+plot(pts[8,], add = T, pch = 16, col = Color)
+```
+
+
+```{r}
+rbPal <- colorRampPalette(c("cadetblue1", "goldenrod1", "palevioletred1"))
+Color <- rbPal(100)[as.numeric(cut((pts$TAVG), breaks = 100))]
+```
+
