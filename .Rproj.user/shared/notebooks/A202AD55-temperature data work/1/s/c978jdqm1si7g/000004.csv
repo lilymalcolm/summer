@@ -1,0 +1,2 @@
+"0","rbPal <- colorRampPalette(c(""cadetblue1"", ""palevioletred1""))"
+"0","Color <- matlab.like2(100)[as.numeric(cut((pts$TAVG), breaks = 100))]"

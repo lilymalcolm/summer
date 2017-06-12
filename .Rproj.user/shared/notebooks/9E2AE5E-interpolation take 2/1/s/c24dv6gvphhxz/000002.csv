@@ -1,0 +1,44 @@
+"0","install.packages(""automap"")
+"
+"2","Installing package into ‘C:/Users/Catherine/Documents/R/win-library/3.4’
+(as ‘lib’ is unspecified)
+"
+"2","also installing the dependencies ‘plyr’, ‘reshape’
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/plyr_1.8.4.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1218950 bytes (1.2 MB)
+"
+"2","downloaded 1.2 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/reshape_0.8.6.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 127649 bytes (124 KB)
+"
+"2","downloaded 124 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/automap_1.0-14.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 57522 bytes (56 KB)
+"
+"2","downloaded 56 KB
+
+"
+"1","package â€˜plyrâ€™ successfully unpacked and MD5 sums checked
+"
+"1","package â€˜reshapeâ€™ successfully unpacked and MD5 sums checked
+"
+"1","package â€˜automapâ€™ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1","The downloaded binary packages are in
+	C:\Users\Catherine\AppData\Local\Temp\RtmpQZeSE3\downloaded_packages"
+"1","
+"

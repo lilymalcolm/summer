@@ -1,0 +1,5 @@
+"0","```r
+plot(origins, col = adjustcolor(\"springgreen2\", alpha = 0.9), lwd = 0.3, bg = \"violetred1\", lty = 1, ljoin = 2)
+par()
+colors()
+```"

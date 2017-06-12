@@ -1,0 +1,1 @@
+{"frames":[],"message":"Error: unexpected ',' in \"Color <- heat.colors(100)[as.numeric(cut((pts$TMAX,\"\n"}

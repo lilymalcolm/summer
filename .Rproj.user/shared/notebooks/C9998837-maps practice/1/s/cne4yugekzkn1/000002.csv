@@ -1,0 +1,5 @@
+"0","```r
+rbPal <- colorRampPalette(c(\"cadetblue1\", \"goldenrod1\", \"palevioletred1\"))
+Color <- rbPal(12)[as.numeric(cut((pts$Egg.start..month.), breaks = 12))]
+p3 <- colorRampPalette(c(\"grey10\", \"white\"))
+```"

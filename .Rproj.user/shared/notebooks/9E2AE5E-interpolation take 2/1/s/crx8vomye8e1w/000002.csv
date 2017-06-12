@@ -1,0 +1,4 @@
+"0","Color <- heat.colors(100)[as.numeric(cut((pts$TMAX, breaks = 100))]
+"
+"2","Error: unexpected ',' in ""Color <- heat.colors(100)[as.numeric(cut((pts$TMAX,""
+"

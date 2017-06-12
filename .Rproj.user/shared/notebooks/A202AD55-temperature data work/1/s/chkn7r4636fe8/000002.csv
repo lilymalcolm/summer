@@ -1,0 +1,7 @@
+"0","temp_and_dd <- data.frame(temp_and_dd)"
+"0","class(temp_and_dd[,4]) <- ""numeric"""
+"0","class(temp_and_dd[,5]) <- ""numeric"""
+"0","nonas <- temp_and_dd[which(is.na(temp_and_dd[,4])==FALSE | is.na(temp_and_dd[,5])==FALSE),]"
+"0","nonas <- nonas[which(is.na(nonas[,4])==FALSE & is.na(nonas[,5])==FALSE),]"
+"0","coord <- coordinates((nonas[,5:4]))"
+"0","pts <- SpatialPointsDataFrame(data =nonas, coords = coord, proj4string = CRS(""+proj=longlat +datum=WGS84""))"

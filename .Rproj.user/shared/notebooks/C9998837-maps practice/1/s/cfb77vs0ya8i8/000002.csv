@@ -1,0 +1,11 @@
+"0","```r
+spring_data <- data.frame(spring_data)
+class(spring_data[,5]) <- \"numeric\"
+class(spring_data[,6]) <- \"numeric\"
+nonas <- spring_data[which(is.na(spring_data[,5])==FALSE | is.na(spring_data[,6])==FALSE),]
+nonas <- nonas[which(is.na(nonas[,5])==FALSE & is.na(nonas[,6])==FALSE),]
+
+coord <- coordinates((nonas[,6:5]))
+pts <- SpatialPointsDataFrame(data =nonas, coords = coord, proj4string = CRS(\"+proj=longlat +datum=WGS84\"))
+plot(pts)
+```"

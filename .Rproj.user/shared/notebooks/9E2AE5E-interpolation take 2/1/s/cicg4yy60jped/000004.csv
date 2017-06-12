@@ -1,0 +1,4 @@
+"0","mo_dd <- ((((mo_data[,10])-(mo_data[,11]))/2) - 65)
+"
+"2","Error in `[.data.frame`(mo_data, , 11) : undefined columns selected
+"

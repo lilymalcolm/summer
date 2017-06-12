@@ -174,14 +174,15 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShpbnNvbClcbmxpYnJhcnkobWFwdG9vbHMpXG5saWJyYXJ5KG1hcHMpXG5saWJyYXJ5KHJhc3RlcilcbmxpYnJhcnkoY29sb3JSYW1wcylcbmxpYnJhcnkocmdkYWwpXG5saWJyYXJ5KHNwKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShpbnNvbClcbmxpYnJhcnkobWFwdG9vbHMpXG5saWJyYXJ5KG1hcHMpXG5saWJyYXJ5KHJhc3RlcilcbmxpYnJhcnkoY29sb3JSYW1wcylcbmxpYnJhcnkocmdkYWwpXG5saWJyYXJ5KHNwKVxubGlicmFyeShhbmltYXRpb24pXG5gYGAifQ== -->
 <pre class="r"><code>library(insol)
 library(maptools)
 library(maps)
 library(raster)
 library(colorRamps)
 library(rgdal)
-library(sp)</code></pre>
+library(sp)
+library(animation)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -203,73 +204,12 @@ temp_and_dd &lt;- cbind(temperaturedata,degreedays)</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3JpZ2lucyA8LSByZWFkU2hhcGVQb2x5KCdUTV9XT1JMRF9CT1JERVJTX1NJTVBMLTAvVE1fV09STERfQk9SREVSU19TSU1QTC0wLjMuc2hwJylcbmBgYCJ9 -->
-<pre class="r"><code>origins &lt;- readShapePoly('TM_WORLD_BORDERS_SIMPL-0/TM_WORLD_BORDERS_SIMPL-0.3.shp')</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3JpZ2lucyA8LSByZWFkU2hhcGVQb2x5KCdUTV9XT1JMRF9CT1JERVJTX1NJTVBMLTAvVE1fV09STERfQk9SREVSU19TSU1QTC0wLjMuc2hwJylcbnN0cihvcmlnaW5zKVxub3JpZ2luc0BkYXRhXG5wcm9qNHN0cmluZyhvcmlnaW5zKSA8LSBDUlMoXCIrcHJvaj1sb25nbGF0ICtkYXR1bT1XR1M4NFwiKVxuYGBgIn0= -->
+<pre class="r"><code>origins &lt;- readShapePoly('TM_WORLD_BORDERS_SIMPL-0/TM_WORLD_BORDERS_SIMPL-0.3.shp')
+str(origins)
+origins@data
+proj4string(origins) &lt;- CRS(&quot;+proj=longlat +datum=WGS84&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoidXNlIHJnZGFsOjpyZWFkT0dSIG9yIHNmOjpzdF9yZWFkXG4ifQ== -->
-<pre><code>use rgdal::readOGR or sf::st_read</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKG9yaWdpbnMpXG5gYGAifQ== -->
-<pre class="r"><code>str(origins)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRm9ybWFsIGNsYXNzICdTcGF0aWFsUG9seWdvbnNEYXRhRnJhbWUnIFtwYWNrYWdlIFwic3BcIl0gd2l0aCA1IHNsb3RzXG4gIC4uQCBkYXRhICAgICAgIDonZGF0YS5mcmFtZSc6XHQyNDYgb2JzLiBvZiAgMTEgdmFyaWFibGVzOlxuICAuLiAuLiQgRklQUyAgICAgOiBGYWN0b3Igdy8gMjQzIGxldmVscyBcIkFBXCIsXCJBQ1wiLFwiQUVcIiwuLjogMiA1IDYgNyA4IDEwIDExIDEyIDEzIDE3IC4uLlxuICAuLiAuLiQgSVNPMiAgICAgOiBGYWN0b3Igdy8gMjQ2IGxldmVscyBcIkFEXCIsXCJBRVwiLFwiQUZcIiwuLjogNCA2MSAxNyA2IDcgOSAxMiAxMSAxNCAyNCAuLi5cbiAgLi4gLi4kIElTTzMgICAgIDogRmFjdG9yIHcvIDI0NiBsZXZlbHMgXCJBQldcIixcIkFGR1wiLFwiQUdPXCIsLi46IDE1IDY0IDE4IDYgMTEgMyAxMiAxMCAxNiAyNSAuLi5cbiAgLi4gLi4kIFVOICAgICAgIDogaW50IFsxOjI0Nl0gMjggMTIgMzEgOCA1MSAyNCAxNiAzMiAzNiA0OCAuLi5cbiAgLi4gLi4kIE5BTUUgICAgIDogRmFjdG9yIHcvIDI0NiBsZXZlbHMgXCJBZmdoYW5pc3RhblwiLC4uOiAxMCA0IDE2IDMgMTIgNyA1IDExIDE0IDE4IC4uLlxuICAuLiAuLiQgQVJFQSAgICAgOiBpbnQgWzE6MjQ2XSA0NCAyMzgxNzQgODI2MCAyNzQwIDI4MjAgMTI0NjcwIDIwIDI3MzY2OSA3NjgyMzAgNzEgLi4uXG4gIC4uIC4uJCBQT1AyMDA1ICA6IGludCBbMToyNDZdIDgzMDM5IDMyODU0MTU5IDgzNTIwMjEgMzE1MzczMSAzMDE3NjYxIDE2MDk1MjE0IDY0MDUxIDM4NzQ3MTQ4IDIwMzEwMjA4IDcyNDc4OCAuLi5cbiAgLi4gLi4kIFJFR0lPTiAgIDogaW50IFsxOjI0Nl0gMTkgMiAxNDIgMTUwIDE0MiAyIDkgMTkgOSAxNDIgLi4uXG4gIC4uIC4uJCBTVUJSRUdJT046IGludCBbMToyNDZdIDI5IDE1IDE0NSAzOSAxNDUgMTcgNjEgNSA1MyAxNDUgLi4uXG4gIC4uIC4uJCBMT04gICAgICA6IG51bSBbMToyNDZdIC02MS43OCAyLjYzIDQ3LjQgMjAuMDcgNDQuNTYgLi4uXG4gIC4uIC4uJCBMQVQgICAgICA6IG51bSBbMToyNDZdIDE3LjEgMjguMiA0MC40IDQxLjEgNDAuNSAuLi5cbiAgLi4gLi4tIGF0dHIoKiwgXCJkYXRhX3R5cGVzXCIpPSBjaHIgWzE6MTFdIFwiQ1wiIFwiQ1wiIFwiQ1wiIFwiTlwiIC4uLlxuICAuLkAgcG9seWdvbnMgICA6TGlzdCBvZiAyNDZcbiAgLi4gLi4kIDpGb3JtYWwgY2xhc3MgJ1BvbHlnb25zJyBbcGFja2FnZSBcInNwXCJdIHdpdGggNSBzbG90c1xuICAuLiAuLiAuLiAuLkAgUG9seWdvbnMgOkxpc3Qgb2YgMlxuICAuLiAuLiAuLiAuLiAuLiQgOkZvcm1hbCBjbGFzcyAnUG9seWdvbicgW3BhY2thZ2UgXCJzcFwiXSB3aXRoIDUgc2xvdHNcbiAgLi4gLi4gLi4gLi4gLi4gLi4gLi5AIGxhYnB0ICA6IG51bSBbMToyXSAtNjEuOCAxNy4xXG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCBhcmVhICAgOiBudW0gMC4wMDk1N1xuICAuLiAuLiAuLiAuLiAuLiAuLiAuLkAgaG9sZSAgIDogbG9naSBGQUxTRVxuICAuLiAuLiAuLiAuLiAuLiAuLiAuLkAgcmluZ0RpcjogaW50IDFcbiAgLi4gLi4gLi4gLi4gLi4gLi4gLi5AIGNvb3JkcyA6IG51bSBbMTo0LCAxOjJdIC02MS43IC02MS45IC02MS44IC02MS43IDE3IC4uLlxuICAuLiAuLiAuLiAuLiAuLiQgOkZvcm1hbCBjbGFzcyAnUG9seWdvbicgW3BhY2thZ2UgXCJzcFwiXSB3aXRoIDUgc2xvdHNcbiAgLi4gLi4gLi4gLi4gLi4gLi4gLi5AIGxhYnB0ICA6IG51bSBbMToyXSAtNjEuOCAxNy42XG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCBhcmVhICAgOiBudW0gMC4wMDc3NFxuICAuLiAuLiAuLiAuLiAuLiAuLiAuLkAgaG9sZSAgIDogbG9naSBGQUxTRVxuICAuLiAuLiAuLiAuLiAuLiAuLiAuLkAgcmluZ0RpcjogaW50IDFcbiAgLi4gLi4gLi4gLi4gLi4gLi4gLi5AIGNvb3JkcyA6IG51bSBbMTo0LCAxOjJdIC02MS43IC02MS45IC02MS45IC02MS43IDE3LjYgLi4uXG4gIC4uIC4uIC4uIC4uQCBwbG90T3JkZXI6IGludCBbMToyXSAxIDJcbiAgLi4gLi4gLi4gLi5AIGxhYnB0ICAgIDogbnVtIFsxOjJdIC02MS44IDE3LjFcbiAgLi4gLi4gLi4gLi5AIElEICAgICAgIDogY2hyIFwiMFwiXG4gIC4uIC4uIC4uIC4uQCBhcmVhICAgICA6IG51bSAwLjAxNzNcbiAgLi4gLi4kIDpGb3JtYWwgY2xhc3MgJ1BvbHlnb25zJyBbcGFja2FnZSBcInNwXCJdIHdpdGggNSBzbG90c1xuICAuLiAuLiAuLiAuLkAgUG9seWdvbnMgOkxpc3Qgb2YgMVxuICAuLiAuLiAuLiAuLiAuLiQgOkZvcm1hbCBjbGFzcyAnUG9seWdvbicgW3BhY2thZ2UgXCJzcFwiXSB3aXRoIDUgc2xvdHNcbiAgLi4gLi4gLi4gLi4gLi4gLi4gLi5AIGxhYnB0ICA6IG51bSBbMToyXSAyLjYzIDI4LjE3XG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCBhcmVhICAgOiBudW0gMjE0XG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCBob2xlICAgOiBsb2dpIEZBTFNFXG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCByaW5nRGlyOiBpbnQgMVxuICAuLiAuLiAuLiAuLiAuLiAuLiAuLkAgY29vcmRzIDogbnVtIFsxOjQ1LCAxOjJdIDIuOTYgNC43OSA1LjMzIDYuNCA4LjYyIC4uLlxuICAuLiAuLiAuLiAuLkAgcGxvdE9yZGVyOiBpbnQgMVxuICAuLiAuLiAuLiAuLkAgbGFicHQgICAgOiBudW0gWzE6Ml0gMi42MyAyOC4xN1xuICAuLiAuLiAuLiAuLkAgSUQgICAgICAgOiBjaHIgXCIxXCJcbiAgLi4gLi4gLi4gLi5AIGFyZWEgICAgIDogbnVtIDIxNFxuICAuLiAuLiQgOkZvcm1hbCBjbGFzcyAnUG9seWdvbnMnIFtwYWNrYWdlIFwic3BcIl0gd2l0aCA1IHNsb3RzXG4gIC4uIC4uIC4uIC4uQCBQb2x5Z29ucyA6TGlzdCBvZiA1XG4gIC4uIC4uIC4uIC4uIC4uJCA6Rm9ybWFsIGNsYXNzICdQb2x5Z29uJyBbcGFja2FnZSBcInNwXCJdIHdpdGggNSBzbG90c1xuICAuLiAuLiAuLiAuLiAuLiAuLiAuLkAgbGFicHQgIDogbnVtIFsxOjJdIDQ1LjUgMzkuNFxuICAuLiAuLiAuLiAuLiAuLiAuLiAuLkAgYXJlYSAgIDogbnVtIDAuNTA2XG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCBob2xlICAgOiBsb2dpIEZBTFNFXG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCByaW5nRGlyOiBpbnQgMVxuICAuLiAuLiAuLiAuLiAuLiAuLiAuLkAgY29vcmRzIDogbnVtIFsxOjcsIDE6Ml0gNDUuMSA0NS44IDQ2LjIgNDUgNDQuOCAuLi5cbiAgLi4gLi4gLi4gLi4gLi4kIDpGb3JtYWwgY2xhc3MgJ1BvbHlnb24nIFtwYWNrYWdlIFwic3BcIl0gd2l0aCA1IHNsb3RzXG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCBsYWJwdCAgOiBudW0gWzE6Ml0gNDUuNSA0MC42XG4gIC4uIC4uIC4uIC4uIC4uIC4uIC4uQCBhcmVhICAgOiBudW0gMC4wMDE2OVxuIn0= -->
-<pre><code>Formal class 'SpatialPolygonsDataFrame' [package &quot;sp&quot;] with 5 slots
-  ..@ data       :'data.frame': 246 obs. of  11 variables:
-  .. ..$ FIPS     : Factor w/ 243 levels &quot;AA&quot;,&quot;AC&quot;,&quot;AE&quot;,..: 2 5 6 7 8 10 11 12 13 17 ...
-  .. ..$ ISO2     : Factor w/ 246 levels &quot;AD&quot;,&quot;AE&quot;,&quot;AF&quot;,..: 4 61 17 6 7 9 12 11 14 24 ...
-  .. ..$ ISO3     : Factor w/ 246 levels &quot;ABW&quot;,&quot;AFG&quot;,&quot;AGO&quot;,..: 15 64 18 6 11 3 12 10 16 25 ...
-  .. ..$ UN       : int [1:246] 28 12 31 8 51 24 16 32 36 48 ...
-  .. ..$ NAME     : Factor w/ 246 levels &quot;Afghanistan&quot;,..: 10 4 16 3 12 7 5 11 14 18 ...
-  .. ..$ AREA     : int [1:246] 44 238174 8260 2740 2820 124670 20 273669 768230 71 ...
-  .. ..$ POP2005  : int [1:246] 83039 32854159 8352021 3153731 3017661 16095214 64051 38747148 20310208 724788 ...
-  .. ..$ REGION   : int [1:246] 19 2 142 150 142 2 9 19 9 142 ...
-  .. ..$ SUBREGION: int [1:246] 29 15 145 39 145 17 61 5 53 145 ...
-  .. ..$ LON      : num [1:246] -61.78 2.63 47.4 20.07 44.56 ...
-  .. ..$ LAT      : num [1:246] 17.1 28.2 40.4 41.1 40.5 ...
-  .. ..- attr(*, &quot;data_types&quot;)= chr [1:11] &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;N&quot; ...
-  ..@ polygons   :List of 246
-  .. ..$ :Formal class 'Polygons' [package &quot;sp&quot;] with 5 slots
-  .. .. .. ..@ Polygons :List of 2
-  .. .. .. .. ..$ :Formal class 'Polygon' [package &quot;sp&quot;] with 5 slots
-  .. .. .. .. .. .. ..@ labpt  : num [1:2] -61.8 17.1
-  .. .. .. .. .. .. ..@ area   : num 0.00957
-  .. .. .. .. .. .. ..@ hole   : logi FALSE
-  .. .. .. .. .. .. ..@ ringDir: int 1
-  .. .. .. .. .. .. ..@ coords : num [1:4, 1:2] -61.7 -61.9 -61.8 -61.7 17 ...
-  .. .. .. .. ..$ :Formal class 'Polygon' [package &quot;sp&quot;] with 5 slots
-  .. .. .. .. .. .. ..@ labpt  : num [1:2] -61.8 17.6
-  .. .. .. .. .. .. ..@ area   : num 0.00774
-  .. .. .. .. .. .. ..@ hole   : logi FALSE
-  .. .. .. .. .. .. ..@ ringDir: int 1
-  .. .. .. .. .. .. ..@ coords : num [1:4, 1:2] -61.7 -61.9 -61.9 -61.7 17.6 ...
-  .. .. .. ..@ plotOrder: int [1:2] 1 2
-  .. .. .. ..@ labpt    : num [1:2] -61.8 17.1
-  .. .. .. ..@ ID       : chr &quot;0&quot;
-  .. .. .. ..@ area     : num 0.0173
-  .. ..$ :Formal class 'Polygons' [package &quot;sp&quot;] with 5 slots
-  .. .. .. ..@ Polygons :List of 1
-  .. .. .. .. ..$ :Formal class 'Polygon' [package &quot;sp&quot;] with 5 slots
-  .. .. .. .. .. .. ..@ labpt  : num [1:2] 2.63 28.17
-  .. .. .. .. .. .. ..@ area   : num 214
-  .. .. .. .. .. .. ..@ hole   : logi FALSE
-  .. .. .. .. .. .. ..@ ringDir: int 1
-  .. .. .. .. .. .. ..@ coords : num [1:45, 1:2] 2.96 4.79 5.33 6.4 8.62 ...
-  .. .. .. ..@ plotOrder: int 1
-  .. .. .. ..@ labpt    : num [1:2] 2.63 28.17
-  .. .. .. ..@ ID       : chr &quot;1&quot;
-  .. .. .. ..@ area     : num 214
-  .. ..$ :Formal class 'Polygons' [package &quot;sp&quot;] with 5 slots
-  .. .. .. ..@ Polygons :List of 5
-  .. .. .. .. ..$ :Formal class 'Polygon' [package &quot;sp&quot;] with 5 slots
-  .. .. .. .. .. .. ..@ labpt  : num [1:2] 45.5 39.4
-  .. .. .. .. .. .. ..@ area   : num 0.506
-  .. .. .. .. .. .. ..@ hole   : logi FALSE
-  .. .. .. .. .. .. ..@ ringDir: int 1
-  .. .. .. .. .. .. ..@ coords : num [1:7, 1:2] 45.1 45.8 46.2 45 44.8 ...
-  .. .. .. .. ..$ :Formal class 'Polygon' [package &quot;sp&quot;] with 5 slots
-  .. .. .. .. .. .. ..@ labpt  : num [1:2] 45.5 40.6
-  .. .. .. .. .. .. ..@ area   : num 0.00169</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -295,85 +235,39 @@ pts &lt;- SpatialPointsDataFrame(data =nonas, coords = coord, proj4string = CRS(
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG5nKGZpbGU9XCJleGFtcGxlJTAyZC5wbmdcIiwgd2lkdGg9MjAwLCBoZWlnaHQ9MjAwKVxuZm9yIChpIGluIDE6MzApe1xucGxvdChvcmlnaW5zKVxucGxvdChwdHNbaSxdLCBhZGQgPSBULCBwY2ggPSAxNiwgY2V4ID0gaSwgY29sID0gQ29sb3IpXG59XG5kZXYub2ZmKClcbmBgYCJ9 -->
-<pre class="r"><code>png(file=&quot;example%02d.png&quot;, width=200, height=200)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGltZW9iamVjdCA8LSBzdHJwdGltZSh0ZW1wX2FuZF9kZFssNl0sIGZvcm1hdCA9IFwiJVklbSVkXCIpXG5kYXRlcyA8LSBmb3JtYXQodGltZW9iamVjdCwgZm9ybWF0ID0gXCIlZCAlQiAlWVwiKVxuYGBgIn0= -->
+<pre class="r"><code>timeobject &lt;- strptime(temp_and_dd[,6], format = &quot;%Y%m%d&quot;)
+dates &lt;- format(timeobject, format = &quot;%d %B %Y&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2F2ZUdJRih7XG5mb3IgKGkgaW4gMTozMCl7XG5wbG90KG9yaWdpbnMpXG5wbG90KHB0c1tpLF0sIGFkZCA9IFQsIHBjaCA9IDE2LCBjb2wgPSBDb2xvcltpXSlcbm10ZXh0KHBhc3RlKGRhdGVzW2ldKSwgMSwgbGluZSA9IC0yMClcbn1cbn0sIG1vdmllLm5hbWUgPSBcIm1hcDMuZ2lmXCIsIGFuaS53aWR0aCA9IDYwMCwgYW5pLmhlaWdodCA9IDQwMCApXG5gYGAifQ== -->
+<pre class="r"><code>saveGIF({
 for (i in 1:30){
 plot(origins)
-plot(pts[i,], add = T, pch = 16, cex = i, col = Color)
+plot(pts[i,], add = T, pch = 16, col = Color[i])
+mtext(paste(dates[i]), 1, line = -20)
 }
-dev.off()</code></pre>
+}, movie.name = &quot;map3.gif&quot;, ani.width = 600, ani.height = 400 )</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibnVsbCBkZXZpY2UgXG4gICAgICAgICAgMSBcbiJ9 -->
-<pre><code>null device 
-          1 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzdGVtKFwiY29udmVydCAtZGVsYXkgODAgKi5wbmcgZXhhbXBsZV8xLmdpZlwiKVxuYGBgIn0= -->
-<pre class="r"><code>system(&quot;convert -delay 80 *.png example_1.gif&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSW52YWxpZCBQYXJhbWV0ZXIgLSA4MFxuIn0= -->
-<pre><code>Invalid Parameter - 80</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicnVubmluZyBjb21tYW5kICdjb252ZXJ0IC1kZWxheSA4MCAqLnBuZyBleGFtcGxlXzEuZ2lmJyBoYWQgc3RhdHVzIDRcbiJ9 -->
-<pre><code>running command 'convert -delay 80 *.png example_1.gif' had status 4</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmJQYWwgPC0gY29sb3JSYW1wUGFsZXR0ZShjKFwiY2FkZXRibHVlMVwiLCBcInBhbGV2aW9sZXRyZWQxXCIpKVxuQ29sb3IgPC0gcmJQYWwoMTAwKVthcy5pbnRlZ2VyKHB0cyRUQVZHKV1cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmJQYWwgPC0gY29sb3JSYW1wUGFsZXR0ZShjKFwiY2FkZXRibHVlMVwiLCBcInBhbGV2aW9sZXRyZWQxXCIpKVxuQ29sb3IgPC0gbWF0bGFiLmxpa2UyKDEwMClbYXMubnVtZXJpYyhjdXQoKHB0cyRUQVZHKSwgYnJlYWtzID0gMTAwKSldXG5gYGAifQ== -->
 <pre class="r"><code>rbPal &lt;- colorRampPalette(c(&quot;cadetblue1&quot;, &quot;palevioletred1&quot;))
-Color &lt;- rbPal(100)[as.integer(pts$TAVG)]</code></pre>
+Color &lt;- matlab.like2(100)[as.numeric(cut((pts$TAVG), breaks = 100))]</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGlyLmNyZWF0ZShcImV4YW1wbGVzXCIpXG5zZXR3ZChcImV4YW1wbGVzXCIpXG5gYGAifQ== -->
-<pre class="r"><code>dir.create(&quot;examples&quot;)
-setwd(&quot;examples&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiVGhlIHdvcmtpbmcgZGlyZWN0b3J5IHdhcyBjaGFuZ2VkIHRvIEM6L1VzZXJzL0NhdGhlcmluZS9Eb2N1bWVudHMvUkRpcmVjdG9yeS9TdW1tZXIvZXhhbXBsZXMgaW5zaWRlIGEgbm90ZWJvb2sgY2h1bmsuIFRoZSB3b3JraW5nIGRpcmVjdG9yeSB3aWxsIGJlIHJlc2V0IHdoZW4gdGhlIGNodW5rIGlzIGZpbmlzaGVkIHJ1bm5pbmcuIFVzZSB0aGUga25pdHIgcm9vdC5kaXIgb3B0aW9uIGluIHRoZSBzZXR1cCBjaHVuayB0byBjaGFuZ2UgdGhlIHRoZSB3b3JraW5nIGRpcmVjdG9yeSBmb3Igbm90ZWJvb2sgY2h1bmtzLlxuIn0= -->
-<pre><code>The working directory was changed to C:/Users/Catherine/Documents/RDirectory/Summer/examples inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the the working directory for notebook chunks.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBleGFtcGxlIDE6IHNpbXBsZSBhbmltYXRlZCBjb3VudGRvd24gZnJvbSAxMCB0byBcIkdPIVwiLlxucG5nKGZpbGU9XCJleGFtcGxlJTAyZC5wbmdcIiwgd2lkdGg9MjAwLCBoZWlnaHQ9MjAwKVxuICBmb3IgKGkgaW4gYygxMDoxLCBcIkcwIVwiKSl7XG4gICAgcGxvdC5uZXcoKVxuICAgIHRleHQoLjUsIC41LCBpLCBjZXggPSA2KVxuICB9XG5kZXYub2ZmKClcbmBgYCJ9 -->
-<pre class="r"><code># example 1: simple animated countdown from 10 to &quot;GO!&quot;.
-png(file=&quot;example%02d.png&quot;, width=200, height=200)
-  for (i in c(10:1, &quot;G0!&quot;)){
-    plot.new()
-    text(.5, .5, i, cex = 6)
-  }
-dev.off()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibnVsbCBkZXZpY2UgXG4gICAgICAgICAgMSBcbiJ9 -->
-<pre><code>null device 
-          1 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjb252ZXJ0IHRoZSAucG5nIGZpbGVzIHRvIG9uZSAuZ2lmIGZpbGUgdXNpbmcgSW1hZ2VNYWdpY2suIFxuIyBUaGUgc3lzdGVtKCkgZnVuY3Rpb24gZXhlY3V0ZXMgdGhlIGNvbW1hbmQgYXMgaWYgaXQgd2FzIGRvbmVcbiMgaW4gdGhlIHRlcm1pbmFsLiB0aGUgLWRlbGF5IGZsYWcgc2V0cyB0aGUgdGltZSBiZXR3ZWVuIHNob3dpbmdcbiMgdGhlIGZyYW1lcywgaS5lLiB0aGUgc3BlZWQgb2YgdGhlIGFuaW1hdGlvbi5cbnN5c3RlbShcImNvbnZlcnQgLWRlbGF5IDgwICoucG5nIGV4YW1wbGVfMS5naWZcIilcbmBgYCJ9 -->
-<pre class="r"><code># convert the .png files to one .gif file using ImageMagick. 
-# The system() function executes the command as if it was done
-# in the terminal. the -delay flag sets the time between showing
-# the frames, i.e. the speed of the animation.
-system(&quot;convert -delay 80 *.png example_1.gif&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSW52YWxpZCBQYXJhbWV0ZXIgLSA4MFxuIn0= -->
-<pre><code>Invalid Parameter - 80</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicnVubmluZyBjb21tYW5kICdjb252ZXJ0IC1kZWxheSA4MCAqLnBuZyBleGFtcGxlXzEuZ2lmJyBoYWQgc3RhdHVzIDRcbiJ9 -->
-<pre><code>running command 'convert -delay 80 *.png example_1.gif' had status 4</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB0byBub3QgbGVhdmUgdGhlIGRpcmVjdG9yeSB3aXRoIHRoZSBzaW5nbGUganBlZyBmaWxlc1xuIyBJIHJlbW92ZSB0aGVtLlxuZmlsZS5yZW1vdmUobGlzdC5maWxlcyhwYXR0ZXJuPVwiLnBuZ1wiKSlcbmBgYCJ9 -->
-<pre class="r"><code># to not leave the directory with the single jpeg files
-# I remove them.
-file.remove(list.files(pattern=&quot;.png&quot;))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBUUlVFIFRSVUUgVFJVRSBUUlVFIFRSVUUgVFJVRSBUUlVFIFRSVUUgVFJVRSBUUlVFIFRSVUVcbiJ9 -->
-<pre><code> [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkoaW5zb2wpDQpsaWJyYXJ5KG1hcHRvb2xzKQ0KbGlicmFyeShtYXBzKQ0KbGlicmFyeShyYXN0ZXIpDQpsaWJyYXJ5KGNvbG9yUmFtcHMpDQpsaWJyYXJ5KHJnZGFsKQ0KbGlicmFyeShzcCkNCmBgYA0KDQoNCmBgYHtyfQ0KdGVtcGVyYXR1cmVkYXRhIDwtIHJlYWQuY3N2KCJ0ZW1wZGF0YS5jc3YiLCBhcy5pcyA9IFRSVUUpDQpgYGANCg0KYGBge3J9DQpkZWdyZWVkYXlzIDwtICh0ZW1wZXJhdHVyZWRhdGFbLDldIC0gMTguMzMzKQ0KZGVncmVlZGF5c1t3aGljaChkZWdyZWVkYXlzIDwgMCldID0gTkENCnRlbXBfYW5kX2RkIDwtIGNiaW5kKHRlbXBlcmF0dXJlZGF0YSxkZWdyZWVkYXlzKQ0KYGBgDQoNCg0KYGBge3J9DQpvcmlnaW5zIDwtIHJlYWRTaGFwZVBvbHkoJ1RNX1dPUkxEX0JPUkRFUlNfU0lNUEwtMC9UTV9XT1JMRF9CT1JERVJTX1NJTVBMLTAuMy5zaHAnKQ0Kc3RyKG9yaWdpbnMpDQpvcmlnaW5zQGRhdGENCnByb2o0c3RyaW5nKG9yaWdpbnMpIDwtIENSUygiK3Byb2o9bG9uZ2xhdCArZGF0dW09V0dTODQiKQ0KYGBgDQoNCmBgYHtyfQ0KcGxvdChvcmlnaW5zKQ0KYGBgDQoNCg0KYGBge3J9DQoNCnRlbXBfYW5kX2RkIDwtIGRhdGEuZnJhbWUodGVtcF9hbmRfZGQpDQpjbGFzcyh0ZW1wX2FuZF9kZFssNF0pIDwtICJudW1lcmljIg0KY2xhc3ModGVtcF9hbmRfZGRbLDVdKSA8LSAibnVtZXJpYyINCm5vbmFzIDwtIHRlbXBfYW5kX2RkW3doaWNoKGlzLm5hKHRlbXBfYW5kX2RkWyw0XSk9PUZBTFNFIHwgaXMubmEodGVtcF9hbmRfZGRbLDVdKT09RkFMU0UpLF0NCm5vbmFzIDwtIG5vbmFzW3doaWNoKGlzLm5hKG5vbmFzWyw0XSk9PUZBTFNFICYgaXMubmEobm9uYXNbLDVdKT09RkFMU0UpLF0NCg0KY29vcmQgPC0gY29vcmRpbmF0ZXMoKG5vbmFzWyw1OjRdKSkNCnB0cyA8LSBTcGF0aWFsUG9pbnRzRGF0YUZyYW1lKGRhdGEgPW5vbmFzLCBjb29yZHMgPSBjb29yZCwgcHJvajRzdHJpbmcgPSBDUlMoIitwcm9qPWxvbmdsYXQgK2RhdHVtPVdHUzg0IikpDQoNCmBgYA0KDQoNCmBgYHtyfQ0KI3BuZyhmaWxlPSJleGFtcGxlJTAyZC5wbmciLCB3aWR0aD0yMDAsIGhlaWdodD0yMDApDQpmb3IgKGkgaW4gMTozMCl7DQpwbG90KG9yaWdpbnMpDQpwbG90KHB0c1tpLF0sIGFkZCA9IFQsIHBjaCA9IDE2LCBjb2wgPSBDb2xvcikNCn0NCiNkZXYub2ZmKCkNCiNzeXN0ZW0oImNvbnZlcnQgLWRlbGF5IDgwICoucG5nIGV4YW1wbGVfMS5naWYiKQ0KYGBgDQoNCg0KYGBge3J9DQpyYlBhbCA8LSBjb2xvclJhbXBQYWxldHRlKGMoImNhZGV0Ymx1ZTEiLCAicGFsZXZpb2xldHJlZDEiKSkNCkNvbG9yIDwtIHJiUGFsKDEwMClbYXMuaW50ZWdlcihwdHMkVEFWRyldDQpgYGANCg0KYGBge3J9DQpkaXIuY3JlYXRlKCJleGFtcGxlcyIpDQpzZXR3ZCgiZXhhbXBsZXMiKQ0KDQojIGV4YW1wbGUgMTogc2ltcGxlIGFuaW1hdGVkIGNvdW50ZG93biBmcm9tIDEwIHRvICJHTyEiLg0KcG5nKGZpbGU9ImV4YW1wbGUlMDJkLnBuZyIsIHdpZHRoPTIwMCwgaGVpZ2h0PTIwMCkNCiAgZm9yIChpIGluIGMoMTA6MSwgIkcwISIpKXsNCiAgICBwbG90Lm5ldygpDQogICAgdGV4dCguNSwgLjUsIGksIGNleCA9IDYpDQogIH0NCmRldi5vZmYoKQ0KDQojIGNvbnZlcnQgdGhlIC5wbmcgZmlsZXMgdG8gb25lIC5naWYgZmlsZSB1c2luZyBJbWFnZU1hZ2ljay4gDQojIFRoZSBzeXN0ZW0oKSBmdW5jdGlvbiBleGVjdXRlcyB0aGUgY29tbWFuZCBhcyBpZiBpdCB3YXMgZG9uZQ0KIyBpbiB0aGUgdGVybWluYWwuIHRoZSAtZGVsYXkgZmxhZyBzZXRzIHRoZSB0aW1lIGJldHdlZW4gc2hvd2luZw0KIyB0aGUgZnJhbWVzLCBpLmUuIHRoZSBzcGVlZCBvZiB0aGUgYW5pbWF0aW9uLg0Kc3lzdGVtKCJjb252ZXJ0IC1kZWxheSA4MCAqLnBuZyBleGFtcGxlXzEuZ2lmIikNCg0KIyB0byBub3QgbGVhdmUgdGhlIGRpcmVjdG9yeSB3aXRoIHRoZSBzaW5nbGUganBlZyBmaWxlcw0KIyBJIHJlbW92ZSB0aGVtLg0KZmlsZS5yZW1vdmUobGlzdC5maWxlcyhwYXR0ZXJuPSIucG5nIikpDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkoaW5zb2wpDQpsaWJyYXJ5KG1hcHRvb2xzKQ0KbGlicmFyeShtYXBzKQ0KbGlicmFyeShyYXN0ZXIpDQpsaWJyYXJ5KGNvbG9yUmFtcHMpDQpsaWJyYXJ5KHJnZGFsKQ0KbGlicmFyeShzcCkNCmxpYnJhcnkoYW5pbWF0aW9uKQ0KYGBgDQoNCg0KYGBge3J9DQp0ZW1wZXJhdHVyZWRhdGEgPC0gcmVhZC5jc3YoInRlbXBkYXRhLmNzdiIsIGFzLmlzID0gVFJVRSkNCmBgYA0KDQpgYGB7cn0NCmRlZ3JlZWRheXMgPC0gKHRlbXBlcmF0dXJlZGF0YVssOV0gLSAxOC4zMzMpDQpkZWdyZWVkYXlzW3doaWNoKGRlZ3JlZWRheXMgPCAwKV0gPSBOQQ0KdGVtcF9hbmRfZGQgPC0gY2JpbmQodGVtcGVyYXR1cmVkYXRhLGRlZ3JlZWRheXMpDQpgYGANCg0KDQpgYGB7cn0NCm9yaWdpbnMgPC0gcmVhZFNoYXBlUG9seSgnVE1fV09STERfQk9SREVSU19TSU1QTC0wL1RNX1dPUkxEX0JPUkRFUlNfU0lNUEwtMC4zLnNocCcpDQpzdHIob3JpZ2lucykNCm9yaWdpbnNAZGF0YQ0KcHJvajRzdHJpbmcob3JpZ2lucykgPC0gQ1JTKCIrcHJvaj1sb25nbGF0ICtkYXR1bT1XR1M4NCIpDQpgYGANCg0KYGBge3J9DQpwbG90KG9yaWdpbnMpDQpgYGANCg0KDQpgYGB7cn0NCg0KdGVtcF9hbmRfZGQgPC0gZGF0YS5mcmFtZSh0ZW1wX2FuZF9kZCkNCmNsYXNzKHRlbXBfYW5kX2RkWyw0XSkgPC0gIm51bWVyaWMiDQpjbGFzcyh0ZW1wX2FuZF9kZFssNV0pIDwtICJudW1lcmljIg0Kbm9uYXMgPC0gdGVtcF9hbmRfZGRbd2hpY2goaXMubmEodGVtcF9hbmRfZGRbLDRdKT09RkFMU0UgfCBpcy5uYSh0ZW1wX2FuZF9kZFssNV0pPT1GQUxTRSksXQ0Kbm9uYXMgPC0gbm9uYXNbd2hpY2goaXMubmEobm9uYXNbLDRdKT09RkFMU0UgJiBpcy5uYShub25hc1ssNV0pPT1GQUxTRSksXQ0KDQpjb29yZCA8LSBjb29yZGluYXRlcygobm9uYXNbLDU6NF0pKQ0KcHRzIDwtIFNwYXRpYWxQb2ludHNEYXRhRnJhbWUoZGF0YSA9bm9uYXMsIGNvb3JkcyA9IGNvb3JkLCBwcm9qNHN0cmluZyA9IENSUygiK3Byb2o9bG9uZ2xhdCArZGF0dW09V0dTODQiKSkNCg0KYGBgDQoNCmBgYHtyfQ0KdGltZW9iamVjdCA8LSBzdHJwdGltZSh0ZW1wX2FuZF9kZFssNl0sIGZvcm1hdCA9ICIlWSVtJWQiKQ0KZGF0ZXMgPC0gZm9ybWF0KHRpbWVvYmplY3QsIGZvcm1hdCA9ICIlZCAlQiAlWSIpDQpgYGANCg0KDQpgYGB7cn0NCnNhdmVHSUYoew0KZm9yIChpIGluIDE6MzApew0KcGxvdChvcmlnaW5zKQ0KcGxvdChwdHNbaSxdLCBhZGQgPSBULCBwY2ggPSAxNiwgY29sID0gQ29sb3JbaV0pDQptdGV4dChwYXN0ZShkYXRlc1tpXSksIDEsIGxpbmUgPSAtMjApDQp9DQp9LCBtb3ZpZS5uYW1lID0gIm1hcDMuZ2lmIiwgYW5pLndpZHRoID0gNjAwLCBhbmkuaGVpZ2h0ID0gNDAwICkNCg0KYGBgDQoNCg0KYGBge3J9DQpyYlBhbCA8LSBjb2xvclJhbXBQYWxldHRlKGMoImNhZGV0Ymx1ZTEiLCAicGFsZXZpb2xldHJlZDEiKSkNCkNvbG9yIDwtIG1hdGxhYi5saWtlMigxMDApW2FzLm51bWVyaWMoY3V0KChwdHMkVEFWRyksIGJyZWFrcyA9IDEwMCkpXQ0KYGBgDQoNCg0K</div>
 
 
 

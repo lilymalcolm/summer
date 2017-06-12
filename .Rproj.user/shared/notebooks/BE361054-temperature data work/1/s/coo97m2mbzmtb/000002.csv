@@ -1,0 +1,4 @@
+"0","```r
+plot(origins)
+plot(pts[1,], add = T, pch = 16, col = Color)
+```"

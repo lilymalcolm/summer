@@ -1,0 +1,7 @@
+"0","```r
+plot(masked, col = p1(100))
+plot(origins, add = T, col = NA)
+```"
+"0","```r
+plot(pts, add = T)
+```"

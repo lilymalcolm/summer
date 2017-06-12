@@ -1,0 +1,6 @@
+"0","```r
+usa <- origins[which(origins$NAME == \"Australia\"),]
+usacrop <- crop(MeanT_raster, usa)
+plot(usacrop)
+plot(origins, add =T, col = NA)
+```"

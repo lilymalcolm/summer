@@ -1,0 +1,4 @@
+"0","```r
+extractedvals <- extract(MeanT_raster, af)
+extractedvals
+```"

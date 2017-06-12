@@ -1,0 +1,4 @@
+"0","```r
+p1 <- colorRampPalette(c(\"plum\", \"lightpink\", \"goldenrod1\"))
+p2 <- colorRampPalette(c(\"lightslateblue\", \"plum\", \"lightpink\", \"goldenrod1\"))
+```"

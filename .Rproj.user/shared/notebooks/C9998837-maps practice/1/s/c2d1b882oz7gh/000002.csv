@@ -1,0 +1,6 @@
+"0","```r
+af <- origins[which(origins$NAME == \"Afghanistan\"), all]
+
+```"
+"1","Error in x[j] : invalid subscript type 'builtin'
+"

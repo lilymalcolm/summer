@@ -1,0 +1,8 @@
+"0","for (i in 1:length(mo_data)){"
+"0","mo_dd <- ((((mo_data[i,10])-(mo_data[i,11]))/2) - 65)"
+"0","}"
+"0","mo_dd[which(mo_dd < 0)] = NA"
+"0","mo_t_dd <- cbind(mo_data, mo_dd)"
+"2","Error in data.frame(..., check.names = FALSE) : 
+  arguments imply differing number of rows: 1318, 0
+"

@@ -1,0 +1,4323 @@
+"0","# Leave-one-out validation routine"
+"0","IDW.out <- vector(length = length(dta))"
+"0","for (i in 1:length(dta)) {"
+"0","  IDW.out[i] <- idw(TMAX ~ 1, dta[-i,], dta[i,], idp=2.0)$var1.pred"
+"0","}"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"1","[inverse distance weighted interpolation]
+"
+"2","
+"

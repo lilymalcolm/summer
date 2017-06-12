@@ -1,0 +1,4 @@
+"0","d <- pointDistance(cp[,1:2], dta, lonlat = FALSE)
+"
+"2","Error: cannot allocate vector of size 41.7 Gb
+"

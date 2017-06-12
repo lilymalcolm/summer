@@ -1,0 +1,6 @@
+"0","```r
+data_b <- read.csv(\"Lily Data.csv\", as.is=TRUE)
+
+```"
+"1","cannot open file 'Lily Data.csv': No such file or directoryError in file(file, \"rt\") : cannot open the connection
+"

@@ -1,0 +1,5 @@
+"0","```r
+degreedays <- (temperaturedata[,9] - 18.333)
+degreedays[which(degreedays < 0)] = NA
+temp_and_dd <- cbind(temperaturedata,degreedays)
+```"

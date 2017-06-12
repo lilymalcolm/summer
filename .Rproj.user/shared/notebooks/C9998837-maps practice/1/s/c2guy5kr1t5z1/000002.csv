@@ -1,0 +1,15 @@
+"0","```r
+install.packages(\"colorRamps\")
+
+```"
+"1","Installing package into ã¤¼ã¸±C:/Users/Catherine/Documents/R/win-library/3.4ã¤¼ã¸²
+(as ã¤¼ã¸±libã¤¼ã¸² is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/colorRamps_2.3.zip'
+Content type 'application/zip' length 24923 bytes (24 KB)
+downloaded 24 KB
+"
+"1","package â€˜colorRampsâ€™ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Catherine\AppData\Local\Temp\RtmpKKtB1x\downloaded_packages
+"

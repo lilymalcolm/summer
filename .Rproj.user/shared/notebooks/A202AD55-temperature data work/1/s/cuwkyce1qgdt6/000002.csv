@@ -1,0 +1,1 @@
+"0","temperaturedata <- read.csv(""tempdata.csv"", as.is = TRUE)"

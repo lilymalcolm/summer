@@ -1,0 +1,4 @@
+"0","kriging <- autoKrige(value~1,dta[which(dta$DATE == 20140605),])
+"
+"2","Error in eval(predvars, data, env) : object 'value' not found
+"

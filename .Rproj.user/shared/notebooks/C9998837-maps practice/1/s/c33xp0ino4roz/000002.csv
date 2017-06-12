@@ -1,0 +1,5 @@
+"0","```r
+cropped <- crop(MeanT_raster, af)
+plot(cropped)
+plot(origins, add =T, col = NA)
+```"

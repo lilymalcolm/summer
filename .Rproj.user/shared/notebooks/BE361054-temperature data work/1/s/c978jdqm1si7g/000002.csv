@@ -1,0 +1,4 @@
+"0","```r
+rbPal <- colorRampPalette(c(\"cadetblue1\", \"goldenrod1\", \"palevioletred1\"))
+Color <- rbPal(100)[as.numeric(cut((pts$TAVG), breaks = 100))]
+```"

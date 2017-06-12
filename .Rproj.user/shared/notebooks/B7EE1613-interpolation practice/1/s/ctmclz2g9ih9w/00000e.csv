@@ -1,0 +1,5 @@
+"0","idw <- interpolate(rsub, gs, na.rm = TRUE)
+"
+"2","Error in na.fail.default(list(`(TMAX)` = c(64L, 72L, 79L, 81L, 72L, 71L,  : 
+  missing values in object
+"
