@@ -1,0 +1,152 @@
+---
+title: "Rhode Island"
+output: html_notebook
+---
+```{r}
+install.packages("dismo")
+install.packages("deldir")
+install.packages("rgeos")
+install.packages("gstat")
+```
+
+```{r}
+library(insol)
+library(maptools)
+library(maps)
+library(raster)
+library(colorRamps)
+library(rgdal)
+library(sp)
+library(animation)
+library(dismo)
+library(deldir)
+library(rgeos)
+library(gstat)
+```
+
+```{r}
+mo_data <- read.csv("vermont.csv", as.is = TRUE)
+```
+
+```{r}
+for (i in 1:length(mo_data)){
+mo_dd <- ((((mo_data[i,10])-(mo_data[i,11]))/2) - 65)
+}
+mo_dd[which(mo_dd < 0)] = NA
+mo_t_dd <- cbind(mo_data, mo_dd)
+```
+
+```{r}
+origins <- readShapePoly('TM_WORLD_BORDERS_SIMPL-0/TM_WORLD_BORDERS_SIMPL-0.3.shp')
+proj4string(origins) <- CRS("+proj=longlat +datum=WGS84")
+states <- readShapePoly("cb_2016_us_state_500k/cb_2016_us_state_500k.shp")
+```
+```{r}
+for(i in 1:11){
+mo_t_dd[which(mo_t_dd[,i] == "-9999"),i] <- NA
+}
+mo_t_dd <- data.frame(mo_t_dd)
+class(mo_t_dd[,4]) <- "numeric"
+class(mo_t_dd[,5]) <- "numeric"
+nonas <- mo_t_dd[which(is.na(mo_t_dd[,4])==FALSE | is.na(mo_t_dd[,5])==FALSE),]
+nonas <- nonas[which(is.na(nonas[,4])==FALSE & is.na(nonas[,5])==FALSE),]
+
+coord <- coordinates((nonas[,5:4]))
+pts <- SpatialPointsDataFrame(data =nonas, coords = coord, proj4string = CRS("+proj=longlat +datum=WGS84"))
+```
+
+```{r}
+plot(pts[which(pts$DATE == 20140601),], pch = 16, col = Color)
+```
+
+```{r}
+timeobject <- strptime(mo_t_dd[,6], format = "%Y%m%d")
+dates <- format(timeobject, format = "%d %B %Y")
+```
+
+```{r}
+juliandates <- as.numeric(julian(timeobject))
+```
+
+```{r}
+origins$NAME
+usa <- origins[which(origins$NAME == "United States"),]
+plot(usa)
+```
+
+```{r}
+Color <- heat.colors(100)[as.numeric(cut((pts$TMAX-pts$TMIN)/2, breaks = 100))]
+plot(pts, pch = 16, col = Color)
+```
+
+```{r}
+plot(origins, xlim=c(-96, -88), ylim=c(35, 41))
+```
+
+```{r}
+saveGIF({
+for (i in 1:30){
+plot(states, xlim=c(-73, -71), ylim=c(42, 45))
+plot(pts[which(pts$DATE == (20140600 + i)),], add = T, pch = 16, cex = 1, col = Color)
+mtext(paste(dates[i]), 1, line = -20)
+}
+}, movie.name = "vermont.gif", ani.width = 600, ani.height = 400 )
+```
+
+interpolation!
+```{r}
+
+RMSE <- function(observed, predicted) {
+  sqrt(mean((predicted - observed)^2, na.rm=TRUE))
+}
+
+# null prediction
+null <- RMSE(mean(pts[which(pts$DATE == 20140601),]$TMAX), pts[which(pts$DATE == 20140601),]$TMAX)
+null
+
+TA <- CRS("+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +datum=NAD83 +units=m +ellps=GRS80 +towgs84=0,0,0")
+
+vermont <- states[which(states$NAME == "Vermont"),]
+
+# nearest neighbor
+v <- voronoi(pts)
+masked <- intersect(v, vermont)
+proj4string(vermont) <- TA
+dta <- spTransform(pts, TA)
+cata <- spTransform(vermont, TA)
+
+spplot(masked, 'TMAX')
+plot(pts[which(pts$DATE == 20140601),], pch = 16, col = Color)
+
+#rasterize spatialpointsdata
+# , xmn = -73, xmx = -71, ymn = 42, ymx = 45
+ex <- extent(c(-73, -71, 42, 45))
+r <- raster(nrows = 1000, ncols = 1000)
+rsub <- crop(r, ex)
+ptssub <- crop(pts, ex)
+
+crs(r) <- "+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +datum=NAD83 +units=m +ellps=GRS80 +towgs84=0,0,0"
+vr <- rasterize(pts, r, "TMAX")
+
+plot(vr, xlim=c(-73, -71), ylim=c(42, 45))
+plot(vermont, add = TRUE)
+
+crs(ptssub) <- "+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +datum=NAD83 +units=m +ellps=GRS80 +towgs84=0,0,0"
+crs(vr) <- "+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +datum=NAD83 +units=m +ellps=GRS80 +towgs84=0,0,0"
+
+# inverse distance weighted
+gs <- gstat(formula=(TMAX)~1, locations=ptssub)
+
+idw <- interpolate(rsub, gs, na.rm = TRUE)
+crs(idw)
+crs(gs)
+```
+
+
+
+
+
+
+
+
+

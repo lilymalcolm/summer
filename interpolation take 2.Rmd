@@ -1,0 +1,278 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+install.packages("automap")
+```
+
+
+```{r}
+library(insol)
+library(maptools)
+library(maps)
+library(raster)
+library(colorRamps)
+library(rgdal)
+library(sp)
+library(animation)
+library(dismo)
+library(deldir)
+library(rgeos)
+library(gstat)
+library(automap)
+```
+
+```{r}
+states <- readShapePoly("cb_2016_us_state_500k/cb_2016_us_state_500k.shp")
+```
+
+```{r}
+mo_data <- read.csv("missouri.csv", as.is = TRUE)
+
+for(i in 1:10){
+mo_data[which(mo_data[,i] == "-9999"),i] <- NA
+}
+
+mo_dd <- ((((mo_data[,8])-(mo_data[,9]))/2) - 65)
+
+mo_dd[which(mo_dd < 0)] = NA
+
+mo_t_dd <- cbind(mo_data, mo_dd)
+
+mo_t_dd <- data.frame(mo_t_dd)
+class(mo_t_dd[,8]) <- "numeric"
+class(mo_t_dd[,9]) <- "numeric"
+nonas <- mo_t_dd[which(is.na(mo_t_dd[,8])==FALSE | is.na(mo_t_dd[,9])==FALSE),]
+nonas <- nonas[which(is.na(nonas[,8])==FALSE & is.na(nonas[,9])==FALSE),]
+
+coord <- coordinates((nonas[,5:4]))
+pts <- SpatialPointsDataFrame(data =nonas, coords = coord, proj4string = CRS("+proj=longlat +datum=WGS84"))
+
+timeobject <- strptime(mo_t_dd[,6], format = "%Y%m%d")
+dates <- format(timeobject, format = "%d %B %Y")
+```
+
+```{r}
+Color <- heat.colors(100)[as.numeric(cut(pts$TMAX, breaks = 100))]
+```
+
+```{r}
+saveGIF({
+for (i in 1:30){
+plot(states, xlim=c(-96, -88), ylim=c(35, 41))
+plot(pts[which(pts$DATE == (20140600 + i)),], add = T, pch = 16, cex = 1, col = Color)
+mtext(paste(dates[i]), 1, line = -20)
+}
+}, movie.name = "missouri.gif", ani.width = 600, ani.height = 400 )
+```
+
+```{r}
+min(mo_t_dd[,8], na.rm = TRUE)
+
+#values function --> assign nas
+
+missouri <- states[which(states$NAME == "Missouri"),]
+
+TA <- CRS("+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +datum=NAD83 +units=m +ellps=GRS80 +towgs84=0,0,0")
+
+saveGIF({
+for(i in 1:30){
+v <- voronoi(pts[which(pts$DATE == (20140600 + i)),])
+masked <- intersect(v, missouri)
+nn_plot <- spplot(masked, "TMAX", at = seq(60,100,.5), main=list(label=dates[i],cex=1))
+print(nn_plot)
+}
+}, movie.name = "nearest_neighbor_mo.gif", ani.width = 600, ani.height = 400)
+
+proj4string(missouri) <- TA
+dta <- spTransform(pts, TA)
+cata <- spTransform(missouri, TA)
+
+vr1 <- rasterize(masked, newraster, "TMAX")
+plot(vr1, xlim=c(-96, -88), ylim=c(35, 41))
+```
+
+```{r}
+cp <- rasterToPoints(vr1)
+d <- pointDistance(cp[,1:2], dta, lonlat = FALSE)
+```
+
+```{r}
+load("temp.1900.1950.0.5.CCSM4.Rdata")
+```
+
+```{r}
+blankRaster <- MeanT_raster
+values(blankRaster) <- NA
+
+ex <- extent(c(-73, -71, 42, 45))
+r <- crop(blankRaster, ex)
+
+newraster <- raster(ncols = 1000, nrows = 1000, ex)
+extent(newraster) <- extent(missouri)
+
+crs(newraster) <- TA
+
+mo_r <- rasterize(missouri, newraster)
+
+vr <- rasterize(pts, newraster, "TMAX")
+plot(vr, xlim=c(-96, -88), ylim=c(35, 41))
+plot(missouri, add = T)
+spplot(vr, xlim=c(-96, -88), ylim=c(35, 41))
+
+
+i <- 5
+saveGIF({
+for(i in 1:30){
+  
+  grd <- as.data.frame(spsample(dta, "regular", n=50000))
+names(grd)       <- c("X", "Y")
+coordinates(grd) <- c("X", "Y")
+gridded(grd)     <- TRUE  # Create SpatialPixel object
+fullgrid(grd)    <- TRUE  # Create SpatialGrid object
+crs(grd) <- TA
+
+  gs <- gstat::idw(formula=TMAX~1, dta[which(dta$DATE == 20140600 + i),], newdata=grd, idp=5)
+  ridw <- raster(gs)
+  extent(ridw) <- missouri
+  mask2 <- mask(ridw, missouri)
+  idw_plot <- spplot(mask2, at = seq(60,100,.5), main=list(label=dates[i],cex=1))
+print(idw_plot)
+}
+}, movie.name = "IDW_mo.gif", ani.width = 600, ani.height = 400)
+
+
+spplot(mask2)
+
+plot(mask2)
+plot(missouri, add = TRUE)
+plot(dta[which(dta$DATE == 20140605),], pch = 16, add = TRUE)
+
+plot(gs)
+plot(ridw)
+
+
+idwr <- mask(idw, missouri)
+plot(idwr, xlim=c(-96, -88), ylim=c(35, 41))
+
+
+```
+
+```{r}
+# Leave-one-out validation routine
+IDW.out <- vector(length = length(dta))
+for(j in 1:30){
+  for (i in 1:length(dta)) {
+    IDW.out[i] <- idw(TMAX ~ 1, dta[-i,], dta[i,], idp=2.0)$var1.pred
+  }
+}
+
+# Plot the differences
+OP <- par(pty="s", mar=c(4,3,0,0))
+  plot(IDW.out ~ dta$TMAX, asp=1, xlab="Observed", ylab="Predicted", pch=16,
+       col=rgb(0,0,0,0.5))
+  abline(lm(IDW.out ~ dta$TMAX), col="red", lw=2,lty=2)
+  abline(0,1)
+par(OP)
+```
+
+```{r}
+listofdates <- c("20140601":"20140630")
+
+j <- 20140601
+
+for (j in listofdates){
+  
+day_temp <- dta[which(dta$DATE == j),]
+
+# Create the interpolated surface
+img <- gstat::idw(formula=TMAX~1, dta[which(dta$DATE == 20140601),], newdata=grd, idp=5)
+n   <- length(day_temp)
+Zi  <- matrix(nrow = length(img$var1.pred), ncol = n)
+
+# Remove a point then interpolate (do this n times for each point)
+st <- stack()
+
+  for (i in 1:n){
+    Z1 <- gstat::idw(TMAX~1, dta[-i,], newdata=grd, idp=5)
+    st <- addLayer(st,raster(Z1,layer=1))
+    # Calculated pseudo-value Z at j
+    Zi[,i] <- n * img$var1.pred - (n-1) * Z1$var1.pred
+  }
+
+  # Jackknife estimator of parameter Z at location j
+  Zj <- as.matrix(apply(Zi, 1, sum, na.rm=T) / n )
+  
+  # Compute (Zi* - Zj)^2
+  c1 <- apply(Zi,2,'-',Zj)            # Compute the difference
+  c1 <- apply(c1^2, 1, sum, na.rm=T ) # Sum the square of the difference
+  
+  # Compute the confidence interval
+  CI <- sqrt( 1/(n*(n-1)) * c1)
+  
+  # Create (CI / interpolated value) raster
+  img.sig   <- img
+  img.sig$v <- CI /img$var1.pred 
+  
+  # Clip the confidence raster to Texas
+  r <- raster(img.sig, layer="v")
+  r.m <- mask(r, W)
+  
+  # Plot the map
+  tm_shape(r.m) + tm_raster(n=7,title="95% confidence interval \n(in inches)") +
+    tm_shape(P) + tm_dots(size=0.2) +
+    tm_legend(legend.outside=TRUE)
+}
+```
+
+
+
+
+
+
+
+
+```{r}
+
+gs <- gstat(formula=TMAX~1, locations=dta[which(dta$DATE == 20140605),])
+
+v <- variogram(gs, width=20)
+
+head(v)
+
+plot(v)
+
+fve <- fit.variogram(v, vgm(85, "Sph", 75, 20))
+fve
+
+plot(variogramLine(fve, 400), type='l', ylim=c(0,120))
+points(v[,2:3], pch=20, col='red')
+
+plot(v, fve)
+
+g <- as(newraster, 'SpatialGrid')
+
+k <- gstat(formula=TMAX~1, locations=dta[which(dta$DATE == 20140605),], model=fve)
+kp <- predict(k, g)
+
+spplot(kp)
+
+ok <- brick(kp)
+ok <- mask(ok, missouri)
+names(ok) <- c('prediction', 'variance')
+plot(ok)
+```
+
+
+```{r}
+mogrid <- missouri
+
+kriging <- autoKrige(TMAX~1,dta[which(dta$DATE == 20140605),])
+
+
+kcrop <- crop(kriging, missouri)
+
+plot(kriging)
+```
+
