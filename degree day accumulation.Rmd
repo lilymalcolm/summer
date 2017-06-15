@@ -1,0 +1,48 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Calculate the degree days and the accumulation of degree days
+```{r}
+# load the data set
+
+# set -9999 to NAs
+for(i in 1:10){
+master_data[which(master_data[,i] == "-9999"),i] <- NA
+}
+
+# columns 8 and 9 have the min and max temperatures, don't use the given average because
+# it often has fewer values
+degree_days <- ((((master_data[,8])+(master_data[,9]))/2) - 65)
+
+list_stations <- master_data[!duplicated(master_data$STATION), ]
+list_stations <- list_stations[,1]
+
+list_dates <- 1:365
+
+
+for(i in 1:length(list_stations)){
+  dd_sum <- 0
+  for (j in 1:length(list_dates)){
+    dd_sum <- dd_sum + degree_days[(as.numeric(i)-1)*(length(list_dates))+as.numeric(j)]
+    
+    accum_dd[(as.numeric(i)-1)*(length(list_dates))+as.numeric(j)] <- dd_sum
+  }
+}
+
+master_data <- cbind(master_data, accum_dd)
+```
+
+Convert DataFrame into SpatialPointsDataFrame
+```{r}
+master_data <- data.frame(master_data)
+class(master_data[,8]) <- "numeric"
+class(master_data[,9]) <- "numeric"
+nonas <- master_data[which(is.na(master_data[,8])==FALSE | is.na(master_data[,9])==FALSE),]
+nonas <- nonas[which(is.na(nonas[,8])==FALSE & is.na(nonas[,9])==FALSE),]
+
+coord <- coordinates((nonas[,5:4]))
+pts <- SpatialPointsDataFrame(data =nonas, coords = coord, proj4string = CRS("+proj=longlat +datum=WGS84"))
+```
+
