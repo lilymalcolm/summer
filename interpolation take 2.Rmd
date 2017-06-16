@@ -34,11 +34,46 @@ for(i in 1:10){
 mo_data[which(mo_data[,i] == "-9999"),i] <- NA
 }
 
-mo_dd <- ((((mo_data[,8])-(mo_data[,9]))/2) - 65)
+mo_dd <- ((((mo_data[,8])+(mo_data[,9]))/2) - 65)
 
 mo_dd[which(mo_dd < 0)] = NA
 
-mo_t_dd <- cbind(mo_data, mo_dd)
+dd_sum <- 0
+typeof(dd_sum)
+accum_dd <- mo_dd
+
+list_stations <- mo_data[!duplicated(mo_data$STATION), ]
+list_stations <- list_stations[,1]
+
+list_dates <- c("20140601":"20140630")
+
+i <- 1
+j <- 2
+
+mo_data <- cbind(mo_data, accum_dd)
+mo_data <- cbind(mo_data, mo_dd)
+
+for(i in 1:length(list_stations)){
+  dd_sum <- 0
+  j <- 0
+  for (j in 1:length(list_dates)){
+    if ((which(mo_data$STATION == list_stations[i] & mo_data$DATE == list_dates[j])) > 0 ) {
+    dd_sum <- dd_sum + mo_data[which(mo_data$STATION == list_stations[i] & mo_data$DATE == list_dates[j]),]$mo_dd
+    
+  print(dd_sum)
+    #mo_data[which((mo_data$STATION == list_stations[i]) & mo_data$DATE == list_dates[j]),]$accum_dd <- dd_sum
+    }
+    else {
+      
+    }
+  }
+}
+
+head(accum_dd)
+head(mo_dd)
+
+
+mo_t_dd <- cbind(mo_data, accum_dd)
 
 mo_t_dd <- data.frame(mo_t_dd)
 class(mo_t_dd[,8]) <- "numeric"
@@ -224,55 +259,5 @@ st <- stack()
     tm_shape(P) + tm_dots(size=0.2) +
     tm_legend(legend.outside=TRUE)
 }
-```
-
-
-
-
-
-
-
-
-```{r}
-
-gs <- gstat(formula=TMAX~1, locations=dta[which(dta$DATE == 20140605),])
-
-v <- variogram(gs, width=20)
-
-head(v)
-
-plot(v)
-
-fve <- fit.variogram(v, vgm(85, "Sph", 75, 20))
-fve
-
-plot(variogramLine(fve, 400), type='l', ylim=c(0,120))
-points(v[,2:3], pch=20, col='red')
-
-plot(v, fve)
-
-g <- as(newraster, 'SpatialGrid')
-
-k <- gstat(formula=TMAX~1, locations=dta[which(dta$DATE == 20140605),], model=fve)
-kp <- predict(k, g)
-
-spplot(kp)
-
-ok <- brick(kp)
-ok <- mask(ok, missouri)
-names(ok) <- c('prediction', 'variance')
-plot(ok)
-```
-
-
-```{r}
-mogrid <- missouri
-
-kriging <- autoKrige(TMAX~1,dta[which(dta$DATE == 20140605),])
-
-
-kcrop <- crop(kriging, missouri)
-
-plot(kriging)
 ```
 
